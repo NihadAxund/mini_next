@@ -1,12 +1,13 @@
 .mainheader_sec{
-    background-color: #242323d3;
+    background-color: #1616169c;
     color: #fff;
     width: 100%;
     transition: top 0.5s;
     height: 10%;
-    max-height: 55px;
-    min-height: 45px;
+    max-height: 65px;
+    min-height: 50px;
     margin: 0;
+    backdrop-filter: blur(10px);
 }
 
 

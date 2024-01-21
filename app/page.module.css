@@ -1,9 +1,21 @@
 .main {
-  background-image: url(https://e0.pxfuel.com/wallpapers/133/891/desktop-wallpaper-white-abstract-background-white-background-abstract-abstract-background-white-gold-abstract.jpg);
+  background-image: url(https://www.pixground.com/wp-content/uploads/2023/06/Windows-11-Abstract-Blue-Background-4K-Desktop-Wallpaper-jpg.webp);
   background-position: center center;
   background-repeat: no-repeat no-repeat;
   background-size: cover;
   width: 100%;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  overflow: hidden;
+
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.038); 
+  backdrop-filter: blur(4px);
 }
