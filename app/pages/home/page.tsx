@@ -1,20 +1,17 @@
 
 import React from "react";
-import TestBtn from "../components/TestBtn";
+
 
 export default function Home() {
     return(
         <main>
             <header>
-
+                <p>A</p>
             </header>
             <div className="thread">
-                <TestBtn></TestBtn>
+            <p>A</p>
             </div>
         </main>
     )
 }
 
-function  lalal() {
-    alert("a")
-}
