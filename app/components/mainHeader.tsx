@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import styles from "./componentsModuleCss/mainheader.module.css";
+import AddRepository from './headercomponents/addRepository';
 
 export default function MainHeader() {
     
@@ -28,7 +29,7 @@ export default function MainHeader() {
 
     return (
         <div className={`${styles.mainheader_sec} ${isSticky ? styles['sticky-header'] : ''}`}>
-            
+            <AddRepository></AddRepository>
         </div>
     )
 }

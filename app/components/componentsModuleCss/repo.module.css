@@ -1,0 +1,52 @@
+.Repobody{
+    overflow: hidden;
+    border-radius: 15px;
+    width: auto;
+    margin: 10px;
+    height: auto;
+    min-width: 240px;
+    max-width: 280px;
+    min-height: 270px;
+    max-height: 300px;
+    transition: all;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    transition-duration: 0.5s;
+    background-color: rgba(0, 0, 0, 0.774);
+
+}
+
+.intro{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+}
+
+.Repobody img{
+    width: 100%;
+    height: 75%;   
+    border-radius: 0px 0px 30px 30px;
+}
+
+.Repobody p{
+    font-size: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    margin: 10px;
+}
+
+.Repobody:hover{
+    margin: 20px;
+    min-width: 255px;
+    min-height: 300px;
+    cursor: pointer;
+    transition: all;
+    color: black;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.638);
+    transition-duration: 1s;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 0px, rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 48px;
+}
