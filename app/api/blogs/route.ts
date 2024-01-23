@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { NextResponse } from 'next/server'
+import { NextResponse,NextRequest } from 'next/server'
 
 export const GET = async (req: Request,res: Response)=>{
     console.log("Get Reqest")
