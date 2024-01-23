@@ -30,5 +30,7 @@ export const getById = (id:number)=>{
         return null;
     }
     let data = repos.find((post)=> post.id == id);
+    if(!data) 
+        return null;
     return data;
 }
