@@ -33,7 +33,6 @@ export const deleteRepoforId = (id:number) =>{
     if(repos&&repos.length>0){
         repos = repos.filter((repo)=>repo.id!==id);
     }
-    
 }
 
 
