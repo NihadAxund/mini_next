@@ -1,11 +1,15 @@
+'use client'
 import React from 'react'
 import styles from './componentsModuleCss/repo.module.css';
-export default function RepoItem() {
+import { Repo } from "../../lib/types";
+import 'animate.css';
+export default function RepoItem({repo}: {repo: Repo}) {
+  //alert(repo)
   return (
-    <div className={styles.Repobody}>
-        <img src="https://avatars.githubusercontent.com/u/113647098?v=4" alt="Large Image" />
+    <div className={`${styles.Repobody} animate__animated animate__backInRight`}    >
+        <img src={repo.imageUrl} alt="Large Image" />
         <div className={styles.intro}>
-            <p>AAAA</p>
+            <p>{repo.name}</p>
         </div>
     </div>
   )

@@ -7,9 +7,17 @@ async function userAvatarUrl(repoUrl: string) {
     const cleanedRepoUrl = repoUrl.replace("https://github.com/", "");
     console.log(cleanedRepoUrl);
 
-    const user = await fetch(`https://api.github.com/repos/${cleanedRepoUrl}`)
-      .then((response) => response.json())
-    return user
+    const response = await fetch(`https://api.github.com/repos/${cleanedRepoUrl}`);
+
+    if (!response.ok) {
+      console.log("error")
+      return null
+    }
+    else{
+      return response.json();
+    }
+
+    
   } catch (error) {
     return null;
   }
@@ -18,6 +26,8 @@ async function userAvatarUrl(repoUrl: string) {
 export const GET = async (req: Request, res: Response) => {
   console.log("Get Reqest");
   let arr = getRepos();
+  console.log("-------------")
+  console.log(arr);
   if(arr&&arr.length>0){
       return NextResponse.json({arr}, { status: 200 });
   }
@@ -32,20 +42,28 @@ export const GET = async (req: Request, res: Response) => {
 // }
 
 export const POST = async (req: Request, res: Response) => {
-  const { repoUrl } = await req.json();
-  const data = await userAvatarUrl(repoUrl);
-  if(data==null)
-    return NextResponse.json({ message:"Repository null" }, { status: 401 });
-  let repo: Repo = {
-    id: null,
-    name: data.name,
-    url: data.html_url,
-    imageUrl: data.owner.avatar_url,
-   };
-   let adddata = addRepo(repo);
-   if (!adddata) {
-        return NextResponse.json({ message:"Repository null" }, { status: 401 });
-   }
+  try {
 
-  return NextResponse.json({ adddata }, { status: 200 });
+    const { repoUrl } = await req.json();
+    const data = await userAvatarUrl(repoUrl);
+
+    if(data==null){
+      return NextResponse.json({ message:"Repository null" }, { status: 401 });
+    }
+    let repo: Repo = {
+      id: null,
+      name: data.name,
+      url: data.html_url,
+      imageUrl: data.owner.avatar_url,
+     };
+     let adddata = addRepo(repo);
+     if (!adddata) {
+          return NextResponse.json({ message:"Repository null" }, { status: 401 });
+     }
+     return NextResponse.json({ adddata }, { status: 200 });
+    
+  } catch (err) {
+    return NextResponse.json({ message:"ERROR", err }, { status: 500 });
+  }
+
 };
