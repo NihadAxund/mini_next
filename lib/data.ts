@@ -7,7 +7,75 @@ var repos: Repo[] = [
         name: 'mini_next',
         url: 'https://github.com/NihadAxund/mini_next',
         imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
-    }
+    },
+    {
+        id: 1,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 2,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 3,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 4,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+
+    {
+        id: 5,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 6,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 7,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 8,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 9,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 10,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    {
+        id: 11,
+        name: 'mini_next',
+        url: 'https://github.com/NihadAxund/mini_next',
+        imageUrl: 'https://avatars.githubusercontent.com/u/113647098?v=4'
+    },
+    
 ];
 
 export const getRepos = ()=> {

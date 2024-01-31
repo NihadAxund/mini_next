@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext,useRef } from "react";
 import MainHeader from "./mainHeader";
 import Mainthread from "./mainthread";
 import { Repo } from "@/lib/types";
@@ -17,14 +17,22 @@ type userContextType = {
 
 export default function MainPage() {
     const [repoItems, setRepoItems] = useState<Repo[]>([]);
+
+    const [isHeader, setisHeader] = useState(false)
     async function AddRepo(newRepo:Repo) {
         setRepoItems(await Myfunction());
         return false;
     }
+
+    function ChangeIsHeader(isok: boolean) {
+      setisHeader(isok)
+      return isok
+    }
+
     const userContextDefault: userContextType = {
     repoItems: repoItems,
   };
-  //NOTE*   const AppContext = createContext<userContextType | undefined>(undefined);
+  //NOTE*   const AppContext = createContext<userContextType |< undefined>(undefined);
   //const AppContext = createContext(userContextDefault);
   useEffect(() => {
     async function asynfunction() {
@@ -33,7 +41,7 @@ export default function MainPage() {
     asynfunction();
   }, []);
   return (
-    <AppContext.Provider value={{ repoItems, AddRepo }}>
+    <AppContext.Provider value={{ repoItems, AddRepo, isHeader, ChangeIsHeader  }}>
       <MainHeader></MainHeader>
 
       <Mainthread></Mainthread>

@@ -13,17 +13,28 @@ import { AppContext } from "./AppContext";
 // }
 
 export default function Mainthread() {
-  const { repoItems } = useContext(AppContext);
-  
+  const { repoItems,isHeader,ChangeIsHeader } = useContext(AppContext);
   // useEffect(() => {
   //   async function asynfunction() {
   //     setRepoItems(await Myfunction());
   //   }
   //   asynfunction();
   // },[])
+  function onscrolls(e:React.UIEvent<HTMLDivElement>) {
+    let data = e.currentTarget.scrollTop;
+    if(!isHeader&&data>300){
+      ChangeIsHeader(!isHeader);
+    }
+    else if(data<300&&isHeader){
+      ChangeIsHeader(!isHeader);
+    }
+    //console.log(isHeader)
+    //console.log(e.currentTarget.scrollTop)
+  }
+
   console.log(repoItems.length)
   return (
-    <div className={styles.thread}>
+    <div className={styles.thread} onScroll={onscrolls}>
       <Space />
 
       {Array.isArray(repoItems) ? (

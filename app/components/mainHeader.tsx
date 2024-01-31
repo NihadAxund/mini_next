@@ -8,9 +8,9 @@ import { AppContext } from './AppContext';
 
 export default function MainHeader() {
     
-    const [isSticky, setSticky] = useState(true);
+
     const [formValue, setFormValue] = useState<string>('');
-    const { AddRepo } = useContext(AppContext);
+    const { AddRepo,isHeader } = useContext(AppContext);
     const changeInputValue = (value: string) => {
       console.log('Form submitted with value:', value);
       setFormValue(value);
@@ -69,11 +69,15 @@ export default function MainHeader() {
         };
       }, [])
 
+      useEffect(()=>{
+        console.log(isHeader)
+      },[isHeader])
+
       
 
 
     return (
-        <div className={`${styles.mainheader_sec} ${isSticky ? styles['sticky-header'] : ''}`}>
+        <div className={`${styles.mainheader_sec} ${isHeader ? styles['sticky-header'] : ''}`}>
             <InputRepo changeInputValue={changeInputValue}></InputRepo>
             <AddRepository SubmitRepo = {SumbitAdddRepo}></AddRepository>
         </div>
